@@ -1,0 +1,161 @@
+#myCarousel img{
+    Border:black solid 20px;  
+        height:100%;
+    }
+body{
+    background:Gold;
+    }
+
+#header{
+    background:WHite;
+    height:100px;
+    text-align:center; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-bottom:20px;
+    border-bottom:solid black 20px;
+    }
+*{
+    font-family: 'Oswald', sans-serif;   
+    }
+#question1, #question2{
+    font-size:60px;
+    text-align:center;
+        }
+        
+#starter{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding-top:20px;
+}
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:20px;
+    background:white;
+    border:solid black 20px;
+    }
+.container2{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    }
+.logo{
+    width:20%;
+    transition:0.5s;
+    }
+.logo:hover{
+    width:25%;
+    cursor:pointer;
+    }
+.buy, .sell{
+    font-size:30px;
+    border-radius:20px;
+    transition:0.5s;
+    }
+.home{
+        transition:0.5s;
+       }
+.buy:hover,.sell:hover, .home:hover{
+    color:gold;
+    cursor:pointer;
+    }
+.item{
+    width:700px;
+    height:500px;
+    }
+img{
+    width:100%;
+
+    }
+.imageUrl,.pricePull,.descriptionPull{
+    margin-bottom:20px;
+    width:75%;
+    max-width:450px;
+    text-align:center;
+    font-size:45px;
+    margin-left:1.5%;
+    margin-right:1.5%;
+    margin-top:5%;
+    }
+.imgPreview{
+    margin-top:20px;
+    width:75%;
+    max-height:500px;
+    background:white;
+    padding:20px;
+    border:black 20px solid;
+    margin-left:auto;
+    }
+#lastPost{
+    border-radius:10px;
+    height:475px;
+    width:20%;
+    background:white;
+    margin-left:20px;
+    }
+.box{
+    width:30%;
+    }
+.b{
+    width:20%;
+    font-size:40px;
+    text-align:center; 
+    }
+#buy, .kart{
+    text-align:center;
+}
+.post{
+    padding-bottom:20px;
+    Margin-top:30px;
+    width:45%;
+    border-radius:30px;
+    overflow: hidden;
+    height:60%;
+    background:white;
+    text-align:center;
+    margin-right:30px;
+    border:solid black 15px;
+    }
+.post img{
+    
+    width:85%;
+    margin-top:30px;
+    margin-LEFT:auto;
+    margin-right:auto;
+    }
+.post1{
+    margin-top:20px;
+    padding-top:20px;
+    padding-bottom:20px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:45%;
+    margin-LEFT:auto;
+    margin-right:auto;
+    border:solid black 15px;
+    background:white;
+    }
+.post1 img{
+    width:50%;
+    height:24%;
+    }
+.Repost{
+    margin:auto;
+    }
+.pics{
+    width:50px;
+    height:50px;
+    transition:0.25s;
+        }
+.pics:hover{
+    width:65px;
+    height:65px;
+    }
+.kart{
+    
+    }
