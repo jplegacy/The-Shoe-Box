@@ -4075,6 +4075,19 @@ body{
     justify-content:center;
     width:100%;
     }
+.container3{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    width:60%;
+    margin:auto;
+    }
+.container4{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+    }    
 .logo{
     width:20%;
     transition:0.5s;
@@ -4113,7 +4126,7 @@ img{
     margin-right:1.5%;
     margin-top:5%;
     }
-.imgPreview{
+.imgPreview, .pictures, .description, .price{
     margin-top:20px;
     width:75%;
     max-height:500px;
@@ -4121,6 +4134,7 @@ img{
     padding:20px;
     border:black 20px solid;
     margin-left:auto;
+    margin-right:auto;
     }
 #lastPost{
     border-radius:10px;
@@ -4140,6 +4154,7 @@ img{
 #buy, .kart{
     text-align:center;
 }
+
 .post{
     padding-bottom:20px;
     Margin-top:30px;
@@ -4188,9 +4203,7 @@ img{
     width:65px;
     height:65px;
     }
-.kart{
-    
-    }</style></head>
+</style></head>
     <body>
 
         <div id="header">        
@@ -4244,11 +4257,16 @@ img{
             
         </div>
         <div class="kart">
-            <h1>Total Items: <span class="totItems2">0</span></h1>
-            <h1>Total Price: $<span class="totPrice">0</span></h1>
-            <div class="pictures"></div>
-            <div class="description"></div>
-            <div class="price"></div>
+            <div class="container4">
+                <h1>Total Items: <span class="totItems2">0</span></h1>
+                <button class=" finish b">Buy</button>
+                <h1>Total Price: $<span class="totPrice">0</span></h1>
+            </div>
+            <div class="container3">
+                <div class="pictures" style="width:30%; max-height:100%;"></div>
+                <div class="description" style="width:30%; max-height:100%;"></div>
+                <div class="price" style="width:30%; max-height:100%;"></div>
+            </div>
         </div>
         <div id="quiz">
             <div id="question1">
@@ -4382,7 +4400,6 @@ $(".ContinueButton").click(function() {
     namePost.push(description);
     
     
-    
     $(".postBox").append("<div class='post "+ description+"1"+"'><img src="+check+"></div>");
     $("."+description+"1").append("<h1 style='font-size:40px;'>"+description+"</h1>");
     $("."+description+"1").append("<h1 style='font-size:40px;'>"+"$ "+price+"</h1>");
@@ -4399,18 +4416,35 @@ $(".ContinueButton").click(function() {
         kartpicturePost.push(check);
         
         
+        $(".description").html("");
+        $(".price").html("");
+        $(".pictures").html("");
+        
+        kartnamePost.forEach(function(name){
+            $(".description").append("<h1>"+name+"</h1>");
+        });
+        kartpricePost.forEach(function(cost){
+            $(".price").append("<h1>$ "+cost+"</h1>");
+        });
+        kartpicturePost.forEach(function(pic){
+            $(".pictures").append("<img src='"+pic+"'>");
+        });
         
         var total = 0 ;
         kartpricePost.forEach(function(cost){
             total = total + parseInt(cost);
             $(".totPrice").html(total);
         });
-        
+        $(".finish").click(function() {
+            alert("Thank You for shopping Here, At The Shoe Box, Your total money spent was "+total+" and You bought things like "+kartnamePost[0]);
+        });
         itemsInKart.push(1);
          $(".totItems2").html(itemsInKart.length);
     });
     $(".totItems").html(picturePost.length);
-    $(".totItems2").html(itemsInKart.length);
+    $(".totItems2").html(itemsInKart.length)
+    
+    ;
 });
 
 $(".kartIcon").click(function() {
@@ -4444,6 +4478,8 @@ $(".Repost").click(function() {
 // $(".Other").click(function() {
 //     other++;
 // });
+
+
 // namePost.forEach(function(nameinside) {
 //     $("#buy").html("<h1 style='font-size:40px;'>"+nameinside+"</h1>");
 // });
