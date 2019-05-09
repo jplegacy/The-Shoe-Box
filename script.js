@@ -76,7 +76,6 @@ $(".ContinueButton").click(function() {
     namePost.push(description);
     
     
-    
     $(".postBox").append("<div class='post "+ description+"1"+"'><img src="+check+"></div>");
     $("."+description+"1").append("<h1 style='font-size:40px;'>"+description+"</h1>");
     $("."+description+"1").append("<h1 style='font-size:40px;'>"+"$ "+price+"</h1>");
@@ -93,18 +92,35 @@ $(".ContinueButton").click(function() {
         kartpicturePost.push(check);
         
         
+        $(".description").html("");
+        $(".price").html("");
+        $(".pictures").html("");
+        
+        kartnamePost.forEach(function(name){
+            $(".description").append("<h1>"+name+"</h1>");
+        });
+        kartpricePost.forEach(function(cost){
+            $(".price").append("<h1>$ "+cost+"</h1>");
+        });
+        kartpicturePost.forEach(function(pic){
+            $(".pictures").append("<img src='"+pic+"'>");
+        });
         
         var total = 0 ;
         kartpricePost.forEach(function(cost){
             total = total + parseInt(cost);
             $(".totPrice").html(total);
         });
-        
+        $(".finish").click(function() {
+            alert("Thank You for shopping Here, At The Shoe Box, Your total money spent was "+total+" and You bought things like "+kartnamePost[0]);
+        });
         itemsInKart.push(1);
          $(".totItems2").html(itemsInKart.length);
     });
     $(".totItems").html(picturePost.length);
-    $(".totItems2").html(itemsInKart.length);
+    $(".totItems2").html(itemsInKart.length)
+    
+    ;
 });
 
 $(".kartIcon").click(function() {
@@ -138,6 +154,8 @@ $(".Repost").click(function() {
 // $(".Other").click(function() {
 //     other++;
 // });
+
+
 // namePost.forEach(function(nameinside) {
 //     $("#buy").html("<h1 style='font-size:40px;'>"+nameinside+"</h1>");
 // });
